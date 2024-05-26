@@ -23,14 +23,14 @@ def extract_arxiv_id(url):
         return None
 
 
-def create_arxiv_retriever(pdf_url):
+def create_arxiv_retriever(pdf_url, openai_api_key):
     arxiv_id = extract_arxiv_id(pdf_url)
     loader = ArxivLoader(query=arxiv_id)
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=512, chunk_overlap=16)
     documents = text_splitter.split_documents(documents=documents)
     vectorstore = FAISS.from_documents(
-        documents=documents, embedding=OpenAIEmbeddings()
+        documents=documents, embedding=OpenAIEmbeddings(openai_api_key)
     )
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
     metadata = documents[0].metadata
@@ -49,7 +49,9 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
 
 def create_conversational_rag_chain(pdf_url, openai_api_key):
     llm = ChatOpenAI(openai_api_key=openai_api_key)
-    retriever, documents, metadata = create_arxiv_retriever(pdf_url=pdf_url)
+    retriever, documents, metadata = create_arxiv_retriever(
+        pdf_url=pdf_url, openai_api_key=openai_api_key
+    )
 
     history_prompt = create_history_prompt()
     history_aware_retriever = create_history_aware_retriever(
