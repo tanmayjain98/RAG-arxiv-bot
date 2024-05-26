@@ -2,8 +2,12 @@
 
 Welcome to the Arxiv Research Paper Chatbot! This project is designed to assist users with understanding and interacting with research papers from Arxiv. The bot leverages Retrieval-Augmented Generation (RAG) techniques, incorporates memory, and utilizes the LangChain library for advanced language processing.
 
+<br>
+<br>
 
 ![Arxiv Research Paper Chatbot](docs/img1.png)
+
+<br>
 
 You can try the live demo ► [DEMO](https://rag-arxiv-bot-aezrygkhlj5jorueq2ayo6.streamlit.app).
 
