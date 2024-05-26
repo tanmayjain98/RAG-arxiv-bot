@@ -42,7 +42,7 @@ def main():
         st.session_state["ready"] = False
 
     openai_api_key = st.sidebar.text_input(
-        "🔑 OpenAI API Key", type="password", placeholder="sk-xrxycrtuytvty"
+        "🔑 OpenAI API Key", type="password", placeholder="sk-proj-xxxxxxxxx"
     )
 
     with st.sidebar:
