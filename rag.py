@@ -30,7 +30,7 @@ def create_arxiv_retriever(pdf_url, openai_api_key):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=512, chunk_overlap=16)
     documents = text_splitter.split_documents(documents=documents)
     vectorstore = FAISS.from_documents(
-        documents=documents, embedding=OpenAIEmbeddings(openai_api_key)
+        documents=documents, embedding=OpenAIEmbeddings(openai_api_key=openai_api_key)
     )
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
     metadata = documents[0].metadata
