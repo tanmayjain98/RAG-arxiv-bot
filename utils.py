@@ -14,5 +14,5 @@ def ask_question(chain, query, session_id):
     for chunk in chain.stream({"input": query}, config):
 
         if "answer" in chunk:
-            yield chunk["answer"] + " "
+            yield chunk["answer"]
             time.sleep(0.03)
