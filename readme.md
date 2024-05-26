@@ -5,7 +5,7 @@ Welcome to the Arxiv Research Paper Chatbot! This project is designed to assist 
 <br>
 <br>
 
-![Arxiv Research Paper Chatbot](docs/img1.png)
+![Arxiv Research Paper Chatbot](docs/img.png)
 
 <br>
 
