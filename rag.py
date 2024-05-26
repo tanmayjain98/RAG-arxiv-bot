@@ -2,11 +2,10 @@ from langchain.chains import create_history_aware_retriever, create_retrieval_ch
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
-from langchain_openai import OpenAI, OpenAIEmbeddings, ChatOpenAI
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders.arxiv import ArxivLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from dotenv import load_dotenv
 import re
