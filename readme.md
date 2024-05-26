@@ -16,16 +16,6 @@ To set up the project, follow these steps:
     ```bash
     git clone https://github.com/yourusername/arxiv-chatbot.git
     cd arxiv-chatbot
-    ```
-
-2. Create and activate a virtual environment:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
-
-3. Install the required dependencies:
-    ```bash
     pip install -r requirements.txt
     ```
 
@@ -34,7 +24,7 @@ To set up the project, follow these steps:
 To run the chatbot, execute the following command:
 
 ```bash
-python main.py
+python app.py
 ```
 
 Configuration
